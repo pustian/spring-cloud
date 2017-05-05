@@ -1,0 +1,21 @@
+server:
+    port: 8002
+spring:
+    application:
+        name: spring-cloud-eureka-server
+eureka:
+    client:
+#        healthcheck:
+#            enabled: false
+        register-with-eureka: false
+        fetch-registry: false
+        serviceUrl:
+            defaultZone: http://localhost:8002/eureka/
+#    instance:
+#        metadataMap:
+#          instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+# 每个Eureka Server同时也是一个Eureka Client。
+# registerWithEureka、fetchRegistry表示要不要将自己注册到Eureka Server中，
+# 因为目前是单机模式，所以配置false
+# instanceId 表示eureka instance 标识，需要唯一，如果不配置，多个节点最终只会有一个生效
