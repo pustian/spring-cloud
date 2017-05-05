@@ -44,18 +44,20 @@ spring:
 
 启动测试配置服务：
     启动服务
-    url调用：
+    
+    说明：URL与配置文件的映射关系如下：
+    /{application}/{profile}[/{label}]
+    /{application}-{profile}.yml
+    /{label}/{application}-{profile}.yml
+    /{application}-{profile}.properties
+    /{label}/{application}-{profile}.properties
+    上面的url会映射 {application}-{profile}.properties 对应的配置文件， {label} 对应git上不同的分支，默认为master
+
+    测试结果
         http://localhost:8001/spring-cloud-config-client/default 
-            展示 spring-cloud-config-client.yml中内容
+            展示 spring-cloud-config-client.yml 中内容 master分支
         http://localhost:8001/spring-cloud-config-client/dev     
-            展示 spring-cloud-config-client.yml + spring-cloud-config-client-dev.yml中内容
-        http://localhost:8001/spring-cloud-config-client/test
-            展示 spring-cloud-config-client.yml + spring-cloud-config-client-test.yml中内容
-        http://localhost:8001/spring-cloud-config-client/uat
-            展示 spring-cloud-config-client.yml + spring-cloud-config-client-uat.yml中内容
-        http://localhost:8001/spring-cloud-config-client/prod
-            展示 spring-cloud-config-client.yml + spring-cloud-config-client-prod.yml中内容
-        
+            展示 spring-cloud-config-client.yml + spring-cloud-config-client-dev.yml中master分支上内容
 
 
 构建Config Client 见 https://github.com/pustian/spring-cloud-config-client.git
@@ -75,8 +77,6 @@ spring-cloud-config-server
         └── java
 
 bootstrap.yml中内容：
-server:
-    port: 7001
 spring:
     application:
         name: spring-cloud-config-client
@@ -87,8 +87,6 @@ spring:
             uri:  http://localhost:8001
             profile: prod
             label：master
-
-
 
 # spring.application.name：对应前配置文件中的{application}部分
 # spring.cloud.config.profile：对应前配置文件中的{profile}部分
