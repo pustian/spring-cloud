@@ -1,11 +1,10 @@
-server:
-    port: 8002
 spring:
     application:
         name: spring-cloud-config-client
     profiles:
-        active: prod
+        active: dev
     cloud:
         config:
             uri:  http://localhost:8001
-            profile: prod
+            label: develop
+            profile: dev

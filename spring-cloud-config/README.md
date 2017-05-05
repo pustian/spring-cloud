@@ -55,7 +55,7 @@ spring:
             展示 spring-cloud-config-client.yml + spring-cloud-config-client-uat.yml中内容
         http://localhost:8001/spring-cloud-config-client/prod
             展示 spring-cloud-config-client.yml + spring-cloud-config-client-prod.yml中内容
-
+        
 
 
 构建Config Client 见 https://github.com/pustian/spring-cloud-config-client.git
@@ -98,13 +98,13 @@ spring:
 # spring.profiles.avtive： 方便快速的切换环境。
 
 
-这里需要格外注意：上面这些属性必须配置在 bootstrap.properties 中，config部分内容才能被正确加载。
+注意：.yml文件可以换为.properties 文件
+注意：上面这些属性必须配置在 bootstrap.properties 中，config部分内容才能被正确加载。
 因为config的相关配置会先于 application.properties ，而 bootstrap.properties 的加载也是先于 application.properties 。 
+
 
 
 参考：
     http://www.tuicool.com/articles/uyqqe27
 
 
-resources 下 bootstrap.yml和appliction.yml, bootstrap.yml会在应用启动之前读取,而spring.cloud.config.uri会影响应用启动
-.yml文件可以换为.properties 文件
