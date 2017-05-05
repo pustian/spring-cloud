@@ -1,0 +1,15 @@
+server:
+    port: 7002
+Spring:
+    application:
+        name: spring-cloud-eureka-client
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8002/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
+    instance:
+        preferIpAddress: true
+
+# eureka.client.serviceUrl.defaultZone 配置eureka服务地址,指定注册中心的地址
