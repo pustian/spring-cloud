@@ -7,5 +7,5 @@ spring:
         config:
             server:
                 git:
-                    uri: https://github.com/pustian/spring-cloud-config.git
-#   searchPaths=: /spring-cloud-config.yml
+                    uri: https://github.com/pustian/spring-cloud.git
+                    searchPaths: ./spring-cloud-config/spring-cloud-config-repo
