@@ -19,18 +19,17 @@ public class EurekaClientController {
     private DiscoveryClient discoveryClient;
 
     @RequestMapping("/discovery")
-    public String doDiscoveryService(){
+    public String doDiscoveryService() {
         StringBuilder buf = new StringBuilder();
         List<String> serviceIds = discoveryClient.getServices();
-        if(!CollectionUtils.isEmpty(serviceIds)){
-            for(String s : serviceIds){
-                System.out.println("serviceId:" + s);
+        if(!CollectionUtils.isEmpty(serviceIds) ) {
+            for(String s : serviceIds) {
                 List<ServiceInstance> serviceInstances =  discoveryClient.getInstances(s);
-                if(!CollectionUtils.isEmpty(serviceInstances)){
-                    for(ServiceInstance si:serviceInstances){
-                        buf.append("["+si.getServiceId() +" host=" +si.getHost()+" port="+si.getPort()+" uri="+si.getUri()+"]");
+                if(!CollectionUtils.isEmpty(serviceInstances)) {
+                    for(ServiceInstance si:serviceInstances) {
+                        buf.append("[ServiceID="+si.getServiceId() +" host=" +si.getHost()+" port="+si.getPort()+" uri="+si.getUri()+"]");
                     }
-                }else{
+                }else {
                     buf.append("no service.");
                 }
             }
@@ -38,8 +37,4 @@ public class EurekaClientController {
         return buf.toString();
     }
 
-    @RequestMapping("/eureka-client-test")
-    public String test(){
-        return "eureka-client-test";
-    }
 }
