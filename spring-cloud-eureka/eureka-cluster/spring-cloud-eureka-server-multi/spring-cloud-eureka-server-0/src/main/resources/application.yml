@@ -1,0 +1,14 @@
+server:
+    port: 8202
+spring:
+    application:
+        name: spring-cloud-eureka-server
+eureka:
+    instance:
+        hostname: pustian.eureka.server1
+        metadataMap:
+            instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    client:
+        serviceUrl:
+            defaultZone: http://pustian.eureka.server0:8102/eureka/
+
