@@ -43,4 +43,6 @@
     默认情况下一个eureka服务使用主机名称注册，那么只能一个主机一个服务。通过eureka.instance.metadataMap.instanceId你可以修改这个实例ID
 
 
-# 检查： http://localhost:8002/
+# 检查：
+    http://localhost:8002 可以查看eureka注册服务信息
+    http://localhost:8002/eureka/apps 可以查看metadata
