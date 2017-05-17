@@ -5,6 +5,7 @@
     └── spring-cloud-config
         ├── spring-cloud-config-server
         ├── spring-cloud-config-client
+        ├── spring-cloud-config-client-bus 实时更新配置
         └── spring-cloud-config-repo
 
 # 说明： 通过下面命令可以刷新配置，指的是GIT端修改后如何在客户端生效(未验证)
@@ -12,5 +13,4 @@
     curl -X POST http://localhost:8080/restart
 
 参考: http://www.tuicool.com/articles/uyqqe27
-
 

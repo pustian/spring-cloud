@@ -1,0 +1,15 @@
+spring:
+    application:
+        name: spring-cloud-config-client
+    profiles:
+        active: dev
+    cloud:
+        config:
+            uri:  http://localhost:8001
+            label: develop
+            profile: dev
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
