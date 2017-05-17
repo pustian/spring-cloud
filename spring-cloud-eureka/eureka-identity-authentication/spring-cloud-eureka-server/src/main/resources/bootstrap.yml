@@ -1,0 +1,12 @@
+#security:
+#  basic:
+#    enabled: true
+#  user:
+#    name: pusen
+#    password: tian
+security:
+  basic:
+    enabled: true
+  user:
+    name: pusen
+    password: tian
