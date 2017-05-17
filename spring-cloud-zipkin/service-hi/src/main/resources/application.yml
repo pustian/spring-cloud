@@ -1,0 +1,8 @@
+server:
+    port: 8112
+spring:
+    application:
+        name: server-hi
+    zipkin:
+        base-url: http://127.0.0.1:8102
+
