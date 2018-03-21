@@ -1,0 +1,14 @@
+server:
+    port: 8002
+spring:
+    application:
+        name: spring-cloud-eureka-server
+
+eureka:
+    client:
+        healthcheck:
+            enabled: true
+        register-with-eureka: false
+        fetch-registry: false
+        serviceUrl:
+            defaultZone: http://pusen:tian@localhost:8002/eureka/ # username:passwd@localhost:8002/eureka/

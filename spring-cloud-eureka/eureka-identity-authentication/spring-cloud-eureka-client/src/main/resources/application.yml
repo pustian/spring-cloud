@@ -1,0 +1,14 @@
+server:
+    port: 7002
+Spring:
+    application:
+        name: spring-cloud-eureka-client
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://pusen:tian@localhost:8002/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
+    instance:
+        preferIpAddress: true
+        appname: tian.pusen
