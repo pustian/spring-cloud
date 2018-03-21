@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.miscx</groupId>
+    <artifactId>misc-config</artifactId>
+    <version>1.0.0</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <!--spring cloud parent version-->
+    <parent>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-parent</artifactId>
+        <version>Brixton.SR4</version>
+        <relativePath/>
+    </parent>
+    <dependencies>
+        <!--spring cloud config server-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+        <!-- 特别注意  svn 环境 需要 引入 SVN ar包 -->
+        <!--<dependency>-->
+            <!--<groupId>org.tmatesoft.svnkit</groupId>-->
+            <!--<artifactId>svnkit</artifactId>-->
+        <!--</dependency>-->
+
+    </dependencies>
+
+</project>

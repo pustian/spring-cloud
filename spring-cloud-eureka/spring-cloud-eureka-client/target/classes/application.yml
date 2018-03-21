@@ -1,0 +1,17 @@
+server:
+    port: 7002
+Spring:
+    application:
+        name: spring-cloud-eureka-client
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://pusen:tian@localhost:8002/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
+    instance:
+        preferIpAddress: true
+        appname: tian.pusen
+#        hostname: tian.pusen
+# eureka.client.serviceUrl.defaultZone 配置eureka服务地址,指定注册中心的地址
+# eureka.instance.preferIpAddress表示将自己的IP地址注册到Eureka上

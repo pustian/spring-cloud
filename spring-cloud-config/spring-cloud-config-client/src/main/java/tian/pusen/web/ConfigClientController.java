@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @EnableDiscoveryClient
-
 public class ConfigClientController {
     @Value("${author-name}") String authorName;
     @Value("${project.name}") String projectName;
